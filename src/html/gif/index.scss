@@ -1,0 +1,70 @@
+@import "../common/common.scss";
+.upload-list{
+	text-align:center;
+	img{
+		cursor:move;
+		width: 200px;
+		height: 100px;
+		object-fit: contain;
+		border:1px solid #ddd;
+		margin-bottom:15px;
+		vertical-align: middle;
+		&.active{
+			border:1px solid green;
+		}
+	}
+	span{
+		vertical-align: middle;
+		margin-left: 20px;
+		color: blue;
+		cursor: pointer;
+	}
+}
+.main-content{
+	flex:1;
+	text-align:center;
+	padding-top:60px;
+	img{
+		border:1px solid #ddd;
+	}
+}
+.title{
+	padding:36px;
+}
+.range-group{
+	text-align:left;
+	width: 200px;
+	margin:20px auto;
+}
+.parms-set{
+	display: none;
+}
+#J_delete{
+	position:absolute;
+	right:15px;
+	top:15px;
+	width:32px;
+	&.active{
+		transform: scale(1.3);
+	}
+	&:hover{
+		transform: scale(1.3);
+	}
+}
+.pop{
+	canvas{
+		border:1px solid #ccc;
+	}
+	.canvas-container{
+		display: inline-block;
+		position: relative;
+		input{
+			position: absolute;
+			background:none;
+			border:none;
+		}
+	}
+	.color-picker{
+		margin-top: 20px;
+	}
+}

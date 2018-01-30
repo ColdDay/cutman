@@ -1,0 +1,58 @@
+@import "../common/common.scss";
+
+.menu-list{
+	width:200px;
+	background-color: #FFF;
+	li{
+		text-align: left;
+		padding:20px;
+		background:#52c3dd;
+		&:hover{
+			background:#1db0b8;
+		}
+		&.active{
+			background:#1db0b8;
+		}
+	}
+}
+.main-content{
+	text-align: center;
+	padding:20px;
+	flex:1;
+}
+
+.img-canvas-container{
+	position:relative;
+	display:block;
+	width:600px;
+	height:600px;
+	background:#ccc url('../../images/background.png') repeat;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  font-size:0;
+  #canvasContainer{
+  	position:relative;
+		display: inline-block;
+		font-size: 0;
+	}
+}
+.clip{
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	background:rgba(255,255,255,0.3);
+	font-size:24px;
+	border:2px dashed black;
+}
+.zoom-canvas{
+	display:none;
+	position: fixed;
+	border-radius:200px;
+	box-shadow:0 0 13px -2px gray;
+}
+.uoload-btn{
+
+}

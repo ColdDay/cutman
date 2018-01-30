@@ -1,0 +1,87 @@
+@@include('../common/header.html')
+
+<link rel="stylesheet" type="text/css" href="index.css">
+<nav class="navbar">
+  <a class="logo" href="#">图片在线编辑</a>
+  <ul class="nav-list">
+    <li class="nav-link"><a href="../ps">图片处理</a></li>
+    <li class="nav-link active"><a>GIF生成</a></li>
+  </ul>
+</nav>
+<div class="main">
+  <div class="operate-area">
+    <img src="../../images/delete.png" class="delete" id="J_delete" title="拖拽到垃圾箱删除">
+    <div class="title">GIF列表</div>
+    <ul class="upload-list" id="uploadList">
+     
+    </ul>
+    <label class="btn btn-primary" for="file">添加图片
+      <input type="file" name="filie" class="upload-file" id="file" multiple>
+    </label>
+    <p>tips:拖拽可以改变生成GIF顺序</p>
+  </div>
+  <div class="main-content">
+    <img id="mainImg">
+    <div class="parms-set">
+      <div class="range-group">
+        <div class="range-info">
+          <span class="range-name">帧数（速度）</span>
+        </div>
+        <input type="range" min="-10" max="-1" step="1" value="-5" data-orientation="vertical" 
+          oninput="speedChange(this)"
+          onchange="speedChange(this)" />
+
+      </div>
+      <button class="btn btn-primary" onclick="download()">下载 GIF</button>
+    </div>
+    <div class="pop">
+      <div class="pop-content">
+        <h2>请输入文字</h2>
+        <div class="canvas-container">
+          <canvas id="editCanvas"></canvas>
+        </div>
+        <br/>
+        <select onchange="changeFontSize(this)">
+          <option value="12px">12号</option>
+          <option value="14px">14号</option>
+          <option value="16px">16号</option>
+          <option value="18px">18号</option>
+          <option value="24px">24号</option>
+          <option value="36px">36号</option>
+          <option value="48px">48号</option>
+          <option value="100px">100号</option>
+        </select>
+        <br />
+        <select onchange="changeFontFamily(this)">
+          <option value="SimSun">宋体</option>
+          <option value="SimHei">黑体</option>
+          <option value="KaiTi">楷体</option>
+          <option value="STHupo">华文琥珀(苹果字体)</option>
+          <option value="Wawati SC">娃娃体-简(苹果字体)</option>
+          <option value="Yuanti SC">圆体-简(苹果字体)</option>
+          <option value="Xingkai SC">行楷-简(苹果字体)</option>
+          <option value="Hanzipen SC">翩翩体-简(苹果字体)</option>
+        </select>
+        <br/>
+        <div class="color-picker">
+          <div id="picker"></div>
+          <div id="slide"></div>
+        </div>
+        <br/>
+        <button class="btn btn-primary" onclick="saveText(this)">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="../../plugins/gif.min.js"></script>
+<script type="text/javascript" src="gifshot.min.js"></script>
+<script type="text/javascript" src="../../plugins/colorpicker.min.js"></script>
+<script type="text/javascript" src="index.js"></script>
+@@include('../common/footer.html')
+
+
+
+
+
+
+

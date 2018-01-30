@@ -1,0 +1,91 @@
+@@include('../common/header.html')
+
+<link rel="stylesheet" type="text/css" href="index.css">
+<nav class="navbar">
+  <a class="logo" href="#">图片在线编辑</a>
+  <ul class="nav-list">
+    <li class="nav-link active"><a>图片处理</a></li>
+    <li class="nav-link"><a href="../gif/index.html">GIF生成</a></li>
+  </ul>
+</nav>
+<div class="main">
+  <div class="menu-list">
+    <ul>
+      <li id="fun-clip" class="fun" data-temp="clip">图片裁剪</li>
+      <li id="fun-filterGray" class="fun" data-temp="filterGray">滤镜处理</li>
+      <li id="fun-zip" class="fun" data-temp="zip">图片压缩</li>
+      <li id="fun-water" class="fun" data-temp="water">图片加水印</li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <div id="uploadList" class="uploader-list"></div>
+    <div id = "myCanvas" class="img-canvas-container">
+      <div id="canvasContainer">
+        <canvas id="currentCanvas"></canvas>
+        <div class="clip" id="dragClip">
+          <div class="clip-drag drag-top"></div>
+          <div class="clip-drag drag-right"></div>
+          <div class="clip-drag drag-bottom"></div>
+          <div class="clip-drag drag-left"></div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <label class="btn btn-primary" for="file">选择图片
+      <input type="file" name="filie" class="upload-file" id="file" multiple>
+    </label>
+  </div>
+  <div class="operate-area">
+    
+  <div class="title">操作设置区域</div>
+  </div>
+  
+</div>
+<!-- 图片裁剪 -->
+<script type="text/template" id = "temp-clip">
+  <div class="operate-panel">
+    <div class="input-group flex-input-group">
+      <input type="text" id="clip-W" class="form-input" placeholder="裁剪宽度"><span class="split">x</span>
+      <input type="text" id="clip-H" class="form-input" placeholder="裁剪高度">
+    </div>
+    <button class="btn btn-primary" onclick="clipImg(this)">裁剪</button>
+    <button class="btn btn-primary" onclick="downloadClipImg(this)">下载</button>
+  </div>
+</script>
+<!-- 灰度调整 -->
+<script type="text/template" id = "temp-filterGray">
+  <div class="operate-panel">
+    <div class="range-group">
+      <div class="range-info">
+        <span class="range-name">灰度值</span>
+        <span class="range-value">100</span>
+      </div>
+      <input type="range" min="-100" max="100" step="1" value="0" data-orientation="vertical" 
+        oninput="grayChange(this)"
+        onchange="grayChange(this)" />
+    </div>
+    <div class="range-group">
+      <div class="range-info">
+        <span class="range-name">亮度</span>
+        <span class="range-value">100</span>
+      </div>
+      <input type="range" min="-100" max="100" step="1" value="0" data-orientation="vertical" 
+        oninput="lightChange(this)"
+        onchange="lightChange(this)" />
+    </div>
+    <button class="btn btn-primary" onclick="downloadGrayImg(this)">下载</button>
+  </div>
+</script>
+
+
+<script type="text/javascript" src="../../plugins/interact.min.js"></script>
+<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="filter.js"></script>
+@@include('../common/footer.html')
+
+
+
+
+
+
+
