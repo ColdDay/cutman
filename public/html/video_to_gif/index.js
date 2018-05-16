@@ -39,6 +39,7 @@ $('.upload-file').on('change', function(e){
 	var video = e.target.files[0] || e.dataTransfer.files[0];
 	var playVideo = document.getElementById('play');
 	playVideo.src = URL.createObjectURL(video);
+	playVideo.playbackRate = 2
 	playVideo.play();
 	setTimeout(function() {
 		getLoopImg();
