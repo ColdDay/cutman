@@ -1,3 +1,4 @@
+// https://www.html5rocks.com/en/tutorials/canvas/imagefilters/
 var Filters = {};
 Filters.getPixels = function (ele) {
 	if(ele.getContext){	//canvas
@@ -36,6 +37,7 @@ Filters.applyFilterImg = function (filter, img, var_args) {
 
 //图片实时预览
 Filters.filterImgPreview = function (filter, canvas, var_args) {
+	console.log(this.getPixels(GLOBAL_APPLY_CANVAS))
 	var args = [canvas, this.getPixels(GLOBAL_APPLY_CANVAS)];
 	for (var i = 2; i < arguments.length; i++) {
 		args.push(arguments[i]);
@@ -64,9 +66,9 @@ Filters.grayScale = function (canvas, pixels, level, rvalue, gvalue, bvalue) {
 	// }
 
 	var options = {
-		r: rvalue || 0.2126,
-		g: gvalue || 0.7152,
-		b: bvalue || 0.0722
+		r: rvalue || 0.2126 + level,
+		g: gvalue || 0.7152 + level,
+		b: bvalue || 0.0722 + level
 	}
 	var rgb_array = pixels.data;
 	for(var i=0; i<rgb_array.length; i+=4) {
